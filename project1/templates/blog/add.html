@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    <title>BLOG</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container shadow-lg mb-5 bg-body rounded">
+<h1 class="text-center class=bg-secondary">ADD BLOG</h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="ADD BLOG" class="btn btn-success btn-lg">
+
+</form>
+    </div>
+{% endblock %}

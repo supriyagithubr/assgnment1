@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>SHOW BLOG PAGE</title>
+{% endblock %}
+
+
+{% block content %}
+<h1>SHOW BLOG PAGE</h1>
+<table class="table">
+    <thead class="table-dark">
+    <tr>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>CONTENT</th>
+        <th>PUBLISHED_DATE</th>
+        <th>UPDATE_DATE</th>
+        <th></th>
+        <th></th>
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for b in obj %}
+    <tr>
+        <td>{{b.title}}</td>
+        <td>{{b.author}}</td>
+        <td>{{b.content}}</td>
+        <td>{{b.published_date}}</td>
+        <td>{{b.update_date}}</td>
+        <td><button class="btn btn-warning"><a href="{% url 'updateblog_url' b.id %}">UPDATE</a></button></td>
+        <td><button class="btn btn-danger"><a href="{% url 'deleteblog_url' b.id %}">DELETE</a></button></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
